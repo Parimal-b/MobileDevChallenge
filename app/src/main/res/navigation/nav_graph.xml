@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/petsFragment">
+
+    <fragment
+        android:id="@+id/petsFragment"
+        android:name="com.example.euleritychallenge.presentation.fragments.PetsFragment"
+        android:label="fragment_pets"
+        tools:layout="@layout/fragment_pets" >
+        <action
+            android:id="@+id/action_petsFragment_to_composeFragment"
+            app:destination="@id/composeFragment" />
+        <action
+            android:id="@+id/action_petsFragment_to_savedFragment"
+            app:destination="@id/savedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/composeFragment"
+        android:name="com.example.euleritychallenge.presentation.composeui.ComposeFragment"
+        android:label="Compose Fragment" >
+
+        <argument
+            android:name="petTitle"
+            app:argType="string" />
+        <argument
+            android:name="petDescription"
+            app:argType="string" />
+        <argument
+            android:name="petUrl"
+            app:argType="string" />
+        <argument
+            android:name="petCreatedDate"
+            app:argType="string" />
+        <argument
+            android:name="petId"
+            app:argType="integer"/>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/savedFragment"
+        android:name="com.example.euleritychallenge.presentation.composeui.SavedPetsFragment"
+        android:label="Compose Fragment" >
+
+
+        <action
+            android:id="@+id/action_savedFragment_to_composeFragment2"
+            app:destination="@id/composeFragment" />
+    </fragment>
+
+
+
+</navigation>
